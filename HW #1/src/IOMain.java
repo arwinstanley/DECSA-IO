@@ -35,8 +35,12 @@ public class IOMain {
 				for(int i=0;i<holder.length;i++) {
 					if (holder[i]=='{') 
 						counts++;
-					if(holder[i]=='}')
+					if(holder[i]=='}') 
 						counts--;
+					if(counts<0) {
+						output.println("Braces Not Balanced");
+						return;
+					}
 				}
 			}
 			if (counts==0)
