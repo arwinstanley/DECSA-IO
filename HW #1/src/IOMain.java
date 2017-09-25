@@ -35,7 +35,7 @@ public class IOMain {
 				for(int i=0;i<holder.length;i++) {
 					if (holder[i]=='{') 
 						counts++;
-					if(holder[i]=='}') 
+					if(holder[i]=='}')
 						counts--;
 					if(counts<0) {
 						output.println("Braces Not Balanced");
@@ -67,8 +67,15 @@ public class IOMain {
 		}
 		public static void revision(Scanner input, PrintWriter output) {
 			ArrayList<DivHolder> divs = new ArrayList<DivHolder>();
-			
-		}
+			ArrayList<String> lines = new ArrayList<String>();
+			while(input.hasNextLine()) {
+				lines.add(input.nextLine());
+			}
+			for(int i = 0;i<lines.size();i++) {
+				
+				}
+			}
+		
 		public static void main(String[] args) {
 			// TODO Auto-generated method stub
 			Scanner in = reader(args[0]);
