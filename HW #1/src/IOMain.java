@@ -66,7 +66,7 @@ public class IOMain {
 			output.println("");
 		}
 		public static void revision(Scanner input, PrintWriter output) {
-			ArrayList<>
+			ArrayList<DivHolder> divs = new ArrayList<DivHolder>();
 			
 		}
 		public static void main(String[] args) {
