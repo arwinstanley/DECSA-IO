@@ -65,18 +65,34 @@ public class IOMain {
 			output.println("Files Identical");
 			output.println("");
 		}
-		public static void revision(Scanner input, PrintWriter output) {
+		public static void revision(Scanner input, PrintWriter output, Scanner noun, Scanner adj, Scanner verb) {
 			ArrayList<DivHolder> divs = new ArrayList<DivHolder>();
 			ArrayList<String> lines = new ArrayList<String>();
 			while(input.hasNextLine()) {
 				lines.add(input.nextLine());
 			}
 			for(int i = 0;i<lines.size();i++) {
-				
-				}
+				String tester = lines.get(i);
+			  do {
+				int first = (lines.get(i)).indexOf("<") ;
+				int last = (lines.get(i)).indexOf(">");
+				divs.add(new DivHolder(first, last, i, tester.substring(first, last)));
+				tester = tester.substring(last);
+			  }while(tester.indexOf("<")!= -1);			
 			}
+			for(int i =0; i<divs.size(); i++) {
+				DivHolder hold = divs.get(i);
+				String newLine = "";
+				
+				
+			}
+		}
+	
 		
 		public static void main(String[] args) {
+			Scanner inNoun = new Scanner(System.in);
+			Scanner inAdj = new Scanner(System.in);
+			Scanner inVerb = new Scanner(System.in);
 			// TODO Auto-generated method stub
 			Scanner in = reader(args[0]);
 			Scanner inTooDeep = reader(args[2]);
@@ -96,8 +112,8 @@ public class IOMain {
 				}
 			writeJava(in, out);
 			checkCode(in, inTooDeep, out);
-			revision(imNotAnAuthor, out);
-			in.close();
+			revision(imNotAnAuthor, out, inNoun, inAdj, inVerb);
+			in.close(); 
 			out.close();
 		}
 
